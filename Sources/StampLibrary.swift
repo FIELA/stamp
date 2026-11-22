@@ -50,7 +50,8 @@ final class StampLibrary: ObservableObject {
                 try? JSONDecoder().decode(FirstVersionStamp.self, from: $0)
             }
             let migrated = previous.map(\.design).flatMap { $0.isValid ? $0 : nil }
-            let starter = StampEntry(name: "表扬印章", design: migrated ?? StampDesign())
+            let starter = StampEntry(name: migrated == nil ? StampShape.circle.stampName : "表扬印章",
+                                     design: migrated ?? StampDesign())
             archive = StampLibraryArchive(entries: [starter], selection: starter.id)
         }
     }

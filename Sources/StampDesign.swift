@@ -76,6 +76,7 @@ enum StampShape: String, Codable, CaseIterable, Identifiable {
     case circle = "圆形"
     case square = "方形"
     var id: Self { self }
+    var stampName: String { "\(rawValue)章" }
 }
 
 enum StampPolarity: String, Codable, CaseIterable, Identifiable {

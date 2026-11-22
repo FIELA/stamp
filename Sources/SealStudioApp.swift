@@ -75,8 +75,8 @@ private struct StampEditor: View {
                 Text("印章库").font(.headline)
                 Spacer()
                 Menu {
-                    Button("圆形表扬章") { library.add(StampDesign(), named: "表扬印章") }
-                    Button("方形篆章") { library.add(.squareSeal, named: "方形篆章") }
+                    Button(StampShape.circle.stampName) { library.add(StampDesign(), named: StampShape.circle.stampName) }
+                    Button(StampShape.square.stampName) { library.add(.squareSeal, named: StampShape.square.stampName) }
                 } label: {
                     Image(systemName: "plus").fontWeight(.medium)
                 }
